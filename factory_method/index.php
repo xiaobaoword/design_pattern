@@ -3,11 +3,12 @@ namespace factory_method;
 
 include '../autoload.php';
 
-// 张三选择支付宝支付
+// 张三支付
 $param = [];
 $param['name'] = '张三';
 $param['money'] = 100;
 
 
-$mode = new WeiXin();
-$mode->doAction($param);
+$factory = new WeiXinFactory();
+$mode = $factory->createMode(); // 使用工厂类获取产品类
+$mode->doAction($param); // 执行产品类方法

@@ -1,5 +1,5 @@
 <?php
-namespace abstract_factory;
+namespace factory_method;
 /**
  * Interface PayInterface
  * 定义支付Api规范接口

@@ -2,5 +2,5 @@
 namespace factory;
 include '../autoload.php';
 
-$mode = Cache::cacheMode();
+$mode = Cache::cacheMode('Redis');
 $mode->getName();

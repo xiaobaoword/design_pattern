@@ -6,8 +6,18 @@ namespace factory;
  **/
 class Cache
 {
-    public static function cacheMode()
+    public static function cacheMode($type)
     {
-        return new RedisMode();
+        switch ($type) {
+            case 'Redis':
+                return new RedisMode();
+                break;
+            case 'Memca';
+                return new MemcachedMode();
+                break;
+            default:
+                return false;
+                break;
+        }
     }
 }
